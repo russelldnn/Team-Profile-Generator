@@ -1,0 +1,27 @@
+{
+  "name": "team_profile_gen",
+  "version": "1.0.0",
+  "description": "used to generate team profiles",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/russelldnn/Team-Profile-Generator.git"
+  },
+  "author": "Russell Dunn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/russelldnn/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/russelldnn/Team-Profile-Generator#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "inquirer": "^9.0.1",
+    "jest": "^28.1.3"
+  }
+}
