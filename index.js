@@ -6,6 +6,8 @@ let Employee = require("./lib/Employee");
 let Manager = require("./lib/Manager");
 let Intern = require("./lib/Intern");
 let Engineer = require("./lib/Engineer");
+//employee array for later
+const employeeArr =[];
 
 //An array of questions for the manager in a format inquirer can use
 let managerInput = [
@@ -29,5 +31,13 @@ let managerInput = [
         name:"officeNumber",
         message:"enter the managers office number in the format XXX-XXX-XXXX"
     },
-    
+
 ]
+//inquirers on the prompts then pushes the array to the employee array
+const createManager = () => {
+    return inquirer.prompt(managerInput)
+    .then((input) => {
+        const manager = new Manager(input.name, input.email, input.id, input.officeNumber);
+        employeeArr.push(manager);
+    })
+}
