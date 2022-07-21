@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+
+.card{
+    width: 50px;
+    height: 80px;
+    background-color: aliceblue;
+
+}
