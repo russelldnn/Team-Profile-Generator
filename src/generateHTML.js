@@ -14,7 +14,7 @@ return (
 </head>
 <body>
     <header>
-        <h1>Team Profile Generator</h1>
+        <h1 class='title'>Team Profile Generator</h1>
     </header>
     <main>
         <div>
@@ -38,7 +38,7 @@ const managerCard = function (manager) {
     <h2> ${manager.name}</h2>
     <h4> Manager </h4>
     <p> ID: ${manager.id}</p>
-    <p> Email: <a href="mailto:${manager.email}"></p>
+    <p> Email: <a href="mailto:${manager.email}"> ${manager.email}</a></p>
     <p> Office Number: ${manager.officeNumber}</p>
     </div>
     `
@@ -52,8 +52,8 @@ const engineerCard = function (engineer) {
     <h2> ${engineer.name}</h2>
     <h4> Engineer </h4>
     <p> ID: ${engineer.id}</p>
-    <p> Email: <a href="mailto:${engineer.email}:></p>
-    <p> Github: <a href="https://github.com/${engineer.github}"></p>
+    <p> Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+    <p> Github: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></p>
     </div>
     `
     )
@@ -66,7 +66,7 @@ const internCard = function (intern) {
     <h2> ${intern.name}</h2>
     <h4> Intern </h4>
     <p> ID: ${intern.id}</p>
-    <p> Email: <a href="mailto:${intern.email}"></p>
+    <p> Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
     <p> School: ${intern.school}</p>
     </div>
     `
