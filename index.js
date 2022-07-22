@@ -1,11 +1,11 @@
 //requirements needed for index
-let generateHTML = require("./src/generateHTML");
-let inquirer = require("inquirer");
-let fs = require("fs");
-let Employee = require("./lib/Employee");
-let Manager = require("./lib/Manager");
-let Intern = require("./lib/Intern");
-let Engineer = require("./lib/Engineer");
+const generateHTML = require("./src/generateHTML");
+const inquirer = require("inquirer");
+const fs = require("fs");
+const Employee = require("./lib/Employee");
+const Manager = require("./lib/Manager");
+const Intern = require("./lib/Intern");
+const Engineer = require("./lib/Engineer");
 //employee array for later
 const employeeArr =[];
 
@@ -99,7 +99,7 @@ const createEmployee = () => {
 
         employeeArr.push(employee);
         //simple if statement using cofirms boolean return to cycle the above function
-        if (repeat === true) {
+        if (repeat == true) {
             return createEmployee(employeeArr);
         } else {
             return employeeArr;
@@ -109,21 +109,30 @@ const createEmployee = () => {
 //writeFile function using fs to create an html
 const writeHTML = data => {
     fs.writeFile("./dist/index.html", data, err => {
-        if (err) {console.log(err); return;}
-        else { console.log ("html has been generated")}
+        if (err)
+            {console.log(err); return;}
+        else{
+            console.log ("html has been generated")
+            }
     })
 };
 //got help with this last bit
 //calls all the functions in turn to gather inquirer data then calls the write funtion to create the html
-createManager().then(createEmployee).then(employeeArr =>{
-    return generateHTML (employeeArr);
+createManager()
+.then(createEmployee)
+.then(employeeArr =>{
+    
+    let genFun = generateHTML(employeeArr);
+    
+    return genFun;
 })
-.then(teamHTML => {
+.then(teamHTML =>{
+    
     return writeHTML(teamHTML);
-})
-
-.catch(err => {
-    console.log("error in the last block");
-    console.log(err);
 });
+
+// .catch(err => {
+//     console.log("error in the last block");
+//     console.log(err);
+// });
 

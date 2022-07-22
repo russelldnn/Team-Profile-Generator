@@ -1,7 +1,7 @@
 //base page layout for an html
 const renderPage = function (employeeCards)
 {
-return
+return (
 `
 <!DOCTYPE html>
 <html lang="en">
@@ -17,8 +17,8 @@ return
         <h1>Team Profile Generator</h1>
     </header>
     <main>
-        <div class="container">
-            <div>
+        <div>
+            <div class="container">
                 ${employeeCards}
             </div>
         </div>
@@ -28,58 +28,63 @@ return
 </html>
 
 `
+)
 }
 //the card layout for manager
 const managerCard = function (manager) {
-    return
+    return (
     `
     <div class="card">
     <h2> ${manager.name}</h2>
     <h4> Manager </h4>
     <p> ID: ${manager.id}</p>
-    <p> Email: ${manager.email}</p>
+    <p> Email: <a href="mailto:${manager.email}"></p>
     <p> Office Number: ${manager.officeNumber}</p>
     </div>
     `
+    )
 }
 //card layout for engineer
 const engineerCard = function (engineer) {
-    return
+    return (
     `
     <div class="card">
     <h2> ${engineer.name}</h2>
     <h4> Engineer </h4>
     <p> ID: ${engineer.id}</p>
-    <p> Email: ${engineer.email}</p>
+    <p> Email: <a href="mailto:${engineer.email}:></p>
     <p> Github: ${engineer.github}</p>
     </div>
     `
+    )
 }
 //card layout for intern
 const internCard = function (intern) {
-    return
+    return (
     `
     <div class="card">
     <h2> ${intern.name}</h2>
     <h4> Intern </h4>
     <p> ID: ${intern.id}</p>
-    <p> Email: ${intern.email}</p>
+    <p> Email: <a href="mailto:${intern.email}"></p>
     <p> School: ${intern.school}</p>
     </div>
     `
+    )
 }
 
 //got help with this
-//uses a for loop to determine how many cards to generate and what type
+//uses a for loop to determine how many cards to generate and an if statement to decide what type
 const generateHTML = (data) => {
     let teamArray = [];
-
+    
     for (let i=0; i<data.length; i++) {
         const employee = data[i];
         const role = employee.getRole();
-
+        
         if (role === 'Manager') {
             const managerData = managerCard(employee);
+            
             teamArray.push(managerData);
         }
 
@@ -95,7 +100,10 @@ const generateHTML = (data) => {
      }
 
      const employeeJoined = teamArray.join('')
+     
      const formTeam = renderPage(employeeJoined);
+
+     
      return formTeam;
 }
 

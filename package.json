@@ -21,7 +21,7 @@
   "homepage": "https://github.com/russelldnn/Team-Profile-Generator#readme",
   "dependencies": {
     "fs": "^0.0.1-security",
-    "inquirer": "^9.0.1",
+    "inquirer": "^8.1.2",
     "jest": "^28.1.3"
   }
 }
