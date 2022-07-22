@@ -51,8 +51,8 @@ const engineerCard = function (engineer) {
     <div class="card">
     <h2> ${engineer.name}</h2>
     <h4> Engineer </h4>
-    <p> ID: ${engineer.id}</p>
-    <p> Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+    <p> ID: ${engineer.email}</p>
+    <p> Email: <a href="mailto:${engineer.id}">${engineer.id}</a></p>
     <p> Github: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></p>
     </div>
     `
@@ -65,8 +65,8 @@ const internCard = function (intern) {
     <div class="card">
     <h2> ${intern.name}</h2>
     <h4> Intern </h4>
-    <p> ID: ${intern.id}</p>
-    <p> Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
+    <p> ID: ${intern.email}</p>
+    <p> Email: <a href="mailto:${intern.id}">${intern.id}</a></p>
     <p> School: ${intern.school}</p>
     </div>
     `

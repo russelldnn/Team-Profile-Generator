@@ -50,12 +50,7 @@ let employeeInput = [
         message: 'What is your employees Job?',
         choices: ['Engineer', 'Intern']
     },
-    {
-        type: 'input',
-        name: 'id',
-        message: 'Enter the employee ID assigned to them'
 
-    },
     {
         type: 'input',
         name: 'name',
@@ -66,6 +61,15 @@ let employeeInput = [
         name: 'email',
         message: 'What is their employee email?'
     },
+
+    {
+        type: 'input',
+        name: 'id',
+        message: 'Enter the employee ID assigned to them'
+
+    },
+   
+    
     {
         type: 'input',
         name: 'github',
@@ -88,7 +92,7 @@ let employeeInput = [
 const createEmployee = () => {
     return inquirer.prompt(employeeInput)
     .then (input => {
-        let {name, id, email, job, school, github, repeat} = input;
+        let { job, name, email, id, school, github, repeat} = input;
         let employee;
 
         if (job === "Intern") {
